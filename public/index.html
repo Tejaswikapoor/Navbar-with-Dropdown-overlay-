@@ -1,0 +1,189 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>lapolo</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="index.css">
+
+    <style>
+        @media screen and (min-width: 1025px) {
+            body {
+                font-family: 'Lato', sans-serif;
+            }
+
+            .overlay {
+                height: 0%;
+                width: 100%;
+                position: fixed;
+                z-index: 1;
+
+                left: 0;
+                background-color: rgb(0, 0, 0);
+                background-color: rgba(0, 0, 0, 0.9);
+                overflow-y: hidden;
+                transition: 0.5s;
+            }
+
+            .overlay-content {
+                position: relative;
+                top: 0%;
+                width: 90%;
+                text-align: center;
+                margin-top: 30px;
+            }
+
+            .overlay a {
+                padding: 8px;
+                text-decoration: none;
+                font-size: 36px;
+                color: #818181;
+                display: block;
+
+                transition: 0.3s;
+            }
+
+            .overlay a:hover, .overlay a:focus {
+                color: #f1f1f1;
+            }
+
+            .overlay .closebtn {
+
+                position: absolute;
+                top: 20px;
+                right: 45px;
+                font-size: 60px;
+            }
+
+
+            @media screen and (max-width: 1025px) {
+                .overlay {
+                    overflow-y: auto;
+                }
+
+                .overlay a {
+                    font-size: 20px
+                }
+
+                .overlay .closebtn {
+                    font-size: 40px;
+                    top: 15px;
+                    right: 35px;
+                }
+            }
+        }
+    </style>
+
+</head>
+<body>
+
+<ul class="nav nav-tabs">
+    <li class="nav-item">
+        <a class="nav-link active" href="#">Active</a>
+    </li>
+    <li class="nav-item dropdown" >
+        <a id="hel"class="nav-link dropdown-toggle" data-hover="dropdown" data-toggle="dropdown"  onclick="openNav()" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+        <!--<div class="dropdown-menu "  >-->
+
+
+            <!--<a class="dropdown-item" href="#">Action</a>-->
+            <!--<a class="dropdown-item" href="#">Another action</a>-->
+            <!--<a class="dropdown-item" href="#">Something else here</a>-->
+            <!--<div class="dropdown-divider"></div>-->
+            <!--<a class="dropdown-item" href="#">Separated link</a>-->
+        <!--</div>-->
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+    </li>
+</ul>
+
+
+<div id="myNav" class="overlay">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <div class="overlay-content">
+        <div class="row">
+            <div class="col-2 m-0">
+        <a  href="#">About</a>
+        <a id= "lo" href="#">Services</a>
+        <a href="#">Clients</a>
+        <a href="#">Contact</a>
+            </div>
+
+            <div class=" col-8 " >
+                <div class="d-flex justify-content-around" id="dv">
+                   <div class="card " style="width: 12rem;height: 300px">
+                    <img class="card-img-top" src=".../100px180/?text=Image cap" alt="Card image cap">
+                    <div class="card-body">
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                     </div>
+
+
+                    <div class="card ml-4" style="width: 12rem;height: 300px">
+                        <img class="card-img-top" src=".../100px180/?text=Image cap" alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-text">CARD1</p>
+                        </div>
+                    </div>
+                    <div class="card ml-4" style="width: 12rem;height: 300px">
+                        <img class="card-img-top" src=".../100px180/?text=Image cap" alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-text">CARD2</p>
+                        </div>
+                    </div>
+                    <div class="card m-4" style="width: 12rem;height: 300px">
+                        <img class="card-img-top" src=".../100px180/?text=Image cap" alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </div>
+
+                   </div>
+
+            </div>
+
+
+    </div>
+    </div>
+</div>
+
+<script>
+
+    lo=document.getElementById("lo")
+
+    lo.addEventListener("mousemove",cl)
+
+    function  cl() {
+
+
+            
+$('dv').empty();
+    }
+    let hov=document.getElementById("hel")
+    hov.addEventListener("mousemove",openNav)
+    function openNav() {
+        document.getElementById("myNav").style.height = "60%";
+    }
+let navi=document.getElementById("myNav")
+    navi.addEventListener("mouseleave", closeNav)
+    function closeNav() {
+        document.getElementById("myNav").style.height = "0%";
+    }
+</script>
+
+
+
+</body>
+</html>
+
+
